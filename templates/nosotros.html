@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acerca de nosotros - Infinity Clothes</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+          <div class="nav-brand">
+            <i class="bx bx-store"></i>
+            <span>INFINITY CLOTHES</span>
+          </div>
+          <div class="nav-toggle" id="navToggle">
+            <i class="bx bx-menu"></i>
+          </div>
+          <ul class="nav-links" id="navLinks">
+            <li>
+              <a href="/"><i class="bx bx-home"></i> Inicio</a>
+            </li>
+            <li>
+              <a href="/nosotros"><i class="bx bx-home"></i> Nosotros</a>
+            </li>
+            <li>
+              <a href="/productos"><i class="bx bx-package"></i> Productos</a>
+            </li>
+            <li>
+              <a href="/carrito"><i class="bx bx-cart"></i> Carrito</a>
+            </li>
+            {% if user %}
+            <li class="user-menu">
+              <a href="#" class="user-menu-toggle">
+                <i class="bx bx-user-circle"></i> {{ user.name }} 
+              </a>
+              <ul class="user-dropdown">
+                <li><a href="/logout"><i class="bx bx-log-out"></i> Cerrar Sesión</a></li>
+              </ul>
+            </li>
+            {% else %}
+            <li>
+              <a href="/login" {% if request.path == '/login' %}class="active"{% endif %}><i class="bx bx-user"></i> Login</a>
+            </li>
+            {% endif %}
+          </ul>
+        </nav>
+      </header>
+
+    <!-- Nuestra Historia -->
+    <section class="about-section">
+      <div class="container">
+        <h1 class="section-title">Descubre nuestra Historia</h1>
+        <div class="about-content">
+          <p>
+            En <b>Infinity Clothes</b>, creemos que la moda es mucho más que
+            solo ropa: es una forma de expresión, identidad y confianza. Nacimos
+            con la misión de ofrecer prendas únicas, cómodas y con estilo,
+            diseñadas para acompañarte en cada momento de tu vida.
+          </p>
+
+          <p>
+            Desde nuestros inicios, nos hemos dedicado a seleccionar materiales
+            de alta calidad y a crear diseños que combinan tendencias modernas
+            con un toque atemporal. Cada prenda que encuentras en nuestra tienda
+            es una pieza pensada para resaltar tu autenticidad y brindarte la
+            mejor experiencia de vestimenta.
+          </p>
+
+          <p>
+            Nuestro compromiso no es solo con la moda, sino también con nuestros
+            clientes. Nos esforzamos por ofrecer una experiencia de compra
+            sencilla, segura y satisfactoria. Ya sea que busques un look casual,
+            elegante o urbano, aquí encontrarás lo que necesitas para expresar
+            tu estilo con confianza.
+          </p>
+
+          <p>
+            ¡Gracias por ser parte de nuestra historia y por permitirnos vestir
+            cada capítulo de tu vida!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Misión y Visión -->
+    <section class="mission-vision">
+      <div class="container">
+        <h2 class="section-title">Misión y Visión</h2>
+        <div class="mission-content">
+          <div class="mission-item">
+            <h3>Misión</h3>
+            <p>
+              Ofrecer a nuestros clientes prendas de vestir de alta calidad, con
+              diseños innovadores y a precios accesibles, para que puedan
+              expresar su estilo y personalidad en cada ocasión.
+            </p>
+          </div>
+          <div class="mission-item">
+            <h3>Visión</h3>
+            <p>
+              Ser reconocidos como una marca líder en moda, que inspire a las
+              personas a vestir con confianza y autenticidad, a través de
+              prendas únicas y versátiles.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valores -->
+    <section class="values-section">
+      <div class="container">
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="bx bxs-heart"></i>
+            </div>
+            <h3>Compromiso</h3>
+            <p>
+              En <b>Infinity Clothes</b>, nos preocupamos por el impacto
+              ambiental y social de nuestra industria. Por eso, trabajamos con
+              proveedores responsables y materiales sostenibles, para reducir
+              nuestra huella ecológica y contribuir al bienestar de las
+              comunidades.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="bx bxs-graduation"></i>
+            </div>
+            <h3>Innovación</h3>
+            <p>
+              En un mundo en constante cambio, la innovación y la creatividad
+              son clave para mantenernos a la vanguardia de la moda. En
+              <b>Infinity Clothes</b>, apostamos por el diseño y la tecnología
+              para ofrecer productos únicos y experiencias de compra
+              innovadoras.
+            </p>
+          </div>
+
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="bx bxs-group"></i>
+            </div>
+            <h3>Integridad</h3>
+            <p>
+              La confianza de nuestros clientes es fundamental para nosotros.
+              Por eso, nos comprometemos a actuar con integridad y transparencia
+              en todas nuestras operaciones, garantizando la calidad y
+              autenticidad de nuestros productos.
+            </p>
+          </div>
+        </div>
+
+        <div class="our-values">
+          <h3>Nuestros valores</h3>
+          <p>
+            Pasión por la moda, compromiso con la excelencia, respeto por el
+            medio ambiente, innovación constante, integridad y transparencia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Imagen de la tienda -->
+    <section class="store-image">
+      <div class="container">
+        <img
+          src="https://i.revistapym.com.co/old/2016/08/Aeropostale.jpg"
+          alt="Tienda Infinity Clothes"
+        />
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- Información de contacto -->
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="bx bx-time"></i>
+            <span>Lunes - Viernes: 9:00 am - 6:00 pm</span>
+          </div>
+          <div class="contact-item">
+            <i class="bx bx-map"></i>
+            <span>Cra. 15 #124 - 30, Usaquén, Bogotá</span>
+          </div>
+          <div class="contact-item">
+            <i class="bx bx-phone"></i>
+            <span>+57-55-1234-5678</span>
+          </div>
+        </div>
+        <!-- Línea divisoria -->
+        <div class="footer-divider"></div>
+        <!-- Footer bottom -->
+        <div class="footer-bottom">
+          <!-- Redes sociales a la izquierda -->
+          <div class="social-links">
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+          </div>
+          <!-- Copyright centrado -->
+          <div class="copyright">
+            © 2023 INFINITY CLOTHES. Todos los derechos reservados.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

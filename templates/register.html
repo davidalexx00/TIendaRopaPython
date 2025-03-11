@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrarse - Infinity Clothes</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="register">
+    <header>
+      <nav class="navbar">
+        <div class="nav-brand">
+          <i class="bx bx-store"></i>
+          <span>INFINITY CLOTHES</span>
+        </div>
+        <div class="nav-toggle" id="navToggle">
+          <i class="bx bx-menu"></i>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li>
+              <a href="/"><i class="bx bx-home"></i> Inicio</a>
+            </li>
+            <li>
+              <a href="/nosotros"><i class="bx bx-home"></i> Nosotros</a>
+            </li>
+            <li>
+              <a href="/productos"><i class="bx bx-package"></i> Productos</a>
+            </li>
+            <li>
+              <a href="/carrito"><i class="bx bx-cart"></i> Carrito</a>
+            </li>
+            {% if user %}
+            <li class="user-menu">
+              <a href="#" class="user-menu-toggle">
+                <i class="bx bx-user-circle"></i> {{ user.name }} 
+              </a>
+              <ul class="user-dropdown">
+                <li><a href="/logout"><i class="bx bx-log-out"></i> Cerrar Sesión</a></li>
+              </ul>
+            </li>
+            {% else %}
+            <li>
+              <a href="/login" {% if request.path == '/login' %}class="active"{% endif %}><i class="bx bx-user"></i> Login</a>
+            </li>
+            {% endif %}
+          </ul>
+      </nav>
+    </header>
+
+    <section class="login">
+      <div class="wrapper">
+        <h1>REGISTRO</h1>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <div class="flash-messages">
+              {% for message in messages %}
+                <div class="flash-message">{{ message }}</div>
+              {% endfor %}
+            </div>
+          {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('registro') }}">
+          <div class="input-box">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Correo Electrónico"
+              required
+            />
+            <i class="bx bxs-envelope"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Contraseña"
+              required
+            />
+            <i class="bx bxs-lock-alt"></i>
+          </div>
+          <button type="submit" class="btn">Registrarse</button>
+        </form>
+        <p>
+          ¿Ya tienes una cuenta?
+          <a href="{{ url_for('login') }}">Inicia sesión aquí</a>
+        </p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <!-- Información de contacto -->
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="bx bx-time"></i>
+            <span>Lunes - Viernes: 9:00 am - 6:00 pm</span>
+          </div>
+          <div class="contact-item">
+            <i class="bx bx-map"></i>
+            <span>Cra. 15 #124 - 30, Usaquén, Bogotá</span>
+          </div>
+          <div class="contact-item">
+            <i class="bx bx-phone"></i>
+            <span>+57-55-1234-5678</span>
+          </div>
+        </div>
+
+        <!-- Línea divisoria -->
+        <div class="footer-divider"></div>
+
+        <!-- Footer bottom -->
+        <div class="footer-bottom">
+          <!-- Redes sociales a la izquierda -->
+          <div class="social-links">
+            <a href="#"><i class="bx bxl-twitter"></i></a>
+            <a href="#"><i class="bx bxl-facebook"></i></a>
+            <a href="#"><i class="bx bxl-instagram"></i></a>
+            <a href="#"><i class="bx bxl-linkedin"></i></a>
+          </div>
+          <!-- Copyright centrado -->
+          <div class="copyright">
+            © 2023 INFINITY CLOTHES. Todos los derechos reservados.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Toggle mobile menu
+      const navToggle = document.getElementById("navToggle");
+      const navLinks = document.getElementById("navLinks");
+
+      navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>

@@ -3,7 +3,7 @@ Este es un proyecto de una tienda de ropa bonita.
 
 # Requerimientos de la maquina para ejecucion del proyecto
 
-1. Python = 3.12.9 **(NECESARIO)**.
+1. Python = 3.12.9 **(NECESARIO)** [DESCARGA](https://www.python.org/ftp/python/3.12.9/python-3.12.9-amd64.exe)
 2. Activar el entorno virtual para obetener las dependencias necesarias para la ejecucion.
 
 # Activacion del virtual enviroment
